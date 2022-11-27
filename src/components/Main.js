@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import Card from "./Card";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import Header from "./Header";
-import Footer from "./Footer";
 
 function Main({
   onEditAvatar,
@@ -12,19 +10,11 @@ function Main({
   onCardClick,
   onCardLike,
   onCardDelete,
-  onLogout,
-  email
 }) {
   const currentUser = useContext(CurrentUserContext);
 
   return (
     <>
-      <Header>
-        <p className="header__email">{email}</p>
-        <button href="#" className="header__button" onClick={onLogout}>
-          Выйти
-        </button>
-      </Header>
       <section className="profile">
         <div className="profile__card">
           <img
@@ -70,7 +60,6 @@ function Main({
           ;
         </ul>
       </section>
-      <Footer/>
     </>
   );
 }

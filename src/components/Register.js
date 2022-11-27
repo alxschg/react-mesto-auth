@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 
 
 function Register({ onRegister }) {
@@ -22,11 +21,6 @@ function Register({ onRegister }) {
 
   return (
     <>
-    <Header>
-    <Link to="/sign-in" className="header__button">
-      Войти
-    </Link>
-  </Header>
     <section className="auth">
       <h2 className="auth__title">Регистрация</h2>
       <form className="form" onSubmit={handleSubmit}>
@@ -34,6 +28,7 @@ function Register({ onRegister }) {
           type="email"
           className="auth__input"
           placeholder="Email"
+          value={email}
           onChange={handleEmailChange}
           required
         />
@@ -41,6 +36,7 @@ function Register({ onRegister }) {
           type="password"
           className="auth__input"
           placeholder="Пароль"
+          value={password}
           onChange={handlePasswordChange}
           required
         />

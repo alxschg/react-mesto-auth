@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import Header from "./Header";
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -20,16 +18,12 @@ function Login({ onLogin }) {
   }
   return (
     <>
-      <Header>
-        <Link to="/sign-up" className="header__button">
-          Регистрация
-        </Link>
-      </Header>
       <section className="auth">
         <h2 className="auth__title">Вход</h2>
         <form className="form" onSubmit={handleSubmit}>
           <input
             type="email"
+            value={email}
             onChange={handleEmailChange}
             className="auth__input"
             placeholder="Email"
@@ -37,6 +31,7 @@ function Login({ onLogin }) {
           />
           <input
             type="password"
+            value={password}
             onChange={handlePasswordChange}
             className="auth__input"
             placeholder="Пароль"
